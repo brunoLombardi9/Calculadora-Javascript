@@ -1,0 +1,173 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1E2022;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(1.5fr, 100px) repeat(5, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas:
+    "display display display display"
+    "suma resta multiplicacion division"
+    "siete ocho nueve CE"
+    "cuatro cinco seis CE"
+    "uno dos tres igual"
+    "decimal cero C igual";
+  background-color: #2D4059;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 22px 1px #000000;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  transition-duration: 0.4s;
+}
+
+.operadores button {
+  background-color: #1E212D;
+  color: white;
+}
+
+.operadores button:hover {
+  background-color: #151D3B;
+}
+
+.numeros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numeros button {
+  background-color: #D5D5D5;
+  border-radius: 2rem;
+}
+
+.numeros button:hover {
+  background-color: #EEEEEE;
+}
+
+.display {
+  grid-area: display;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 70px;
+}
+
+.operacionArriba {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.operacionAbajo {
+  font-size: 2.2rem;
+  margin-right: 10px;
+}
+
+.igual {
+  grid-area: igual;
+}
+
+.igual button {
+  background-color: #FF7800;
+}
+
+.igual button:hover {
+  background-color: #FF8C32;
+}
+
+.suma {
+  grid-area: suma;
+}
+
+.resta {
+  grid-area: resta;
+}
+
+.multiplicacion {
+  grid-area: multiplicacion;
+}
+
+.division {
+  grid-area: division;
+}
+
+.siete {
+  grid-area: siete;
+}
+
+.cuatro {
+  grid-area: cuatro;
+}
+
+.uno {
+  grid-area: uno;
+}
+
+.ocho {
+  grid-area: ocho;
+}
+
+.cinco {
+  grid-area: cinco;
+}
+
+.dos {
+  grid-area: dos;
+}
+
+.nueve {
+  grid-area: nueve;
+}
+
+.seis {
+  grid-area: seis;
+}
+
+.tres {
+  grid-area: tres;
+}
+
+.cero {
+  grid-area: cero;
+}
+
+.C {
+  grid-area: C;
+}
+
+.CE {
+  grid-area: CE;
+}
+
+.CE button {
+  background-color: #334756;
+  color: white;
+}
+
+.CE button:hover {
+  background-color: #476072;
+}
+
+.decimal {
+  grid-area: decimal;
+}
