@@ -32,10 +32,16 @@ function elegirOperacion(botonesOperadores) {
     operacionActual.innerText = operacionActual.innerText.slice(0, -1);
   }
 
+  if (operacionActual.innerText !== "" && operacionAnterior.innerText !== "") {
+    calcular();
+  }
+
   operacion = botonesOperadores.innerText;
 
   if (operacionActual.innerText.includes(".")) {
-    operacionActual.innerText = parseFloat(operacionActual.innerText).toFixed(5);
+    if (contarDecimales(parseFloat(operacionActual.innerText)) > 5) {
+      operacionActual.innerText = parseFloat(operacionActual.innerText).toFixed(5);
+    }
   }
 
   operacionAnterior.innerText = `${operacionActual.innerText} ${operacion}`;
@@ -43,7 +49,6 @@ function elegirOperacion(botonesOperadores) {
 }
 
 function calcular() {
-
   if (operacionActual.innerText === "" || operacionAnterior.innerText === "") return;
 
   const numeroAnterior = parseFloat(operacionAnterior.innerText);
@@ -67,7 +72,9 @@ function calcular() {
   operacionAnterior.innerText = "";
 
   if (Number.isInteger(resultado) === false) {
-    resultado = resultado.toFixed(5);
+    if (contarDecimales(resultado) > 5) {
+      resultado = resultado.toFixed(5);
+    }
   }
 
   operacionActual.innerText = resultado;
@@ -86,6 +93,11 @@ function borrar() {
   } else {
     operacionActual.innerText = operacionActual.innerText.slice(0, -1);
   }
+}
+
+function contarDecimales(numero) {
+  if (Math.floor(numero) === numero) return 0;
+  return numero.toString().split(".")[1].length;
 }
 
 // Eventos  -------------------------------------------------------------------------------------------------------
