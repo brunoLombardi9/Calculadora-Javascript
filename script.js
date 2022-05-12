@@ -13,10 +13,7 @@ let resultado;
 // Funciones -------------------------------------------------------------------------------------------------------
 
 function escribirNumero(botonNumero) {
-  if (operacionActual.innerText === "0") {
-    operacionActual.innerText = "";
-  }
-
+  if (operacionActual.innerText === "0") return;
   if (botonNumero.innerText === "." && operacionActual.innerText.includes(".")) return;
 
   operacionActual.innerText += botonNumero.innerText;
